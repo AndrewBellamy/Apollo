@@ -1,20 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+<nav class="navbar bg-dark">
+  <span class="navbar-brand mb-0 h1 text-light" >apollo</span>
+  <span class="float-right" *ngIf="authService.user | async">
+    <p class="text-light mb-0 d-inline">{{ (authService.user | async)?.email }}</p>
+    <button class="btn btn-outline-light d-inline" (click)="logout()">Logout</button>
+  </span>
+</nav>
+
+<div class="container w-50 mt-5">
+
+  <div class="container-fluid" *ngIf="authService.user | async">
+    <app-items [userId]="uid"></app-items>
+  </div>
+
+  <div class="card" *ngIf="!(authService.user | async)">
+    <div class="container card-body w-50">
+      <label class="d-block" for="emailInput">Email</label>
+      <input 
+        id="emailInput"
+        type="text" 
+        [(ngModel)]="email" 
+        placeholder="email..." 
+        class="d-block w-100">
+      <label class="d-block" for="passwordInput">Password</label>
+      <input 
+        id="passwordInput"
+        type="password" 
+        [(ngModel)]="password" 
+        placeholder="password..." 
+        class="d-block w-100">
+      <div class="d-block mt-2 float-right">
+        <button (click)="login()" [disabled]="!email || !password" class="btn btn-info">
+          Login
+        </button>
+        <button (click)="signup()" [disabled]="!email || !password" class="btn btn-warning">
+          Signup
+        </button>
+      </div>
+      
+    </div>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-2" role="alert">
+    <p class="mb-0" >{{errorMessage}}</p>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 

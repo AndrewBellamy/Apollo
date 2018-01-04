@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-4">
+    <div class=" mt-2 border rounded p-2">
+      <h5>Todo Item</h5>
+      <form [formGroup]="todoItem">
+        <label class="d-flex" for="itemTitle">Item</label>
+        <input 
+          class="d-flex w-100"
+          id="itemTitle" 
+          type="text" 
+          formControlName="itemTitle"
+          placeholder="Item name...">
+        <label class="d-flex" for="itemDescription">Description</label>
+        <input 
+          class="d-flex w-100"
+          id="itemDescription" 
+          type="text" 
+          formControlName="itemDescription"
+          placeholder="Item description...">
+      </form>
+      <div class="mt-1">
+        <button (click)="addTodo()" class="btn btn-info">Add</button>
+        <button (click)="resetForm()" class="btn btn-danger">Reset</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="list-group mt-2">
+      <div 
+        *ngFor="let item of (items$ | async)" 
+        class="list-group-item" 
+        [class.list-group-item-warning]="!item.done"
+        [class.list-group-item-success]="item.done">
+        <span>
+          <strong>{{ item.title }} : </strong>{{ item.description }}
+        </span>
+        <span *ngIf="item.done">
+          [ Completed ]
+        </span>
+        <button *ngIf="!item.done" type="button" class="close" aria-label="Close" (click)="toggleDone(item)">
+          <span aria-hidden="true">&#10003;</span>
+        </button>
+        <button *ngIf="item.done" type="button" class="close" aria-label="Close" (click)="deleteTodo(item)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

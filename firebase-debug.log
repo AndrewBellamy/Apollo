@@ -1,0 +1,27 @@
+[debug] [2018-01-04T22:58:45.992Z] ----------------------------------------------------------------------
+[debug] [2018-01-04T22:58:46.007Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\P70007\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-01-04T22:58:46.007Z] CLI Version:   3.16.0
+[debug] [2018-01-04T22:58:46.007Z] Platform:      win32
+[debug] [2018-01-04T22:58:46.007Z] Node Version:  v6.11.2
+[debug] [2018-01-04T22:58:46.007Z] Time:          Fri Jan 05 2018 09:28:46 GMT+1030 (Cen. Australia Daylight Time)
+[debug] [2018-01-04T22:58:46.007Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-04T22:58:46.070Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-04T22:58:46.070Z] > authorizing via signed-in user
+[debug] [2018-01-04T22:58:46.085Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-04T22:58:46.085Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/tArgHLjaBofL4LhAiG_TiX71sdBFUaS469r-IrssPCw4i2qCY1L4594lf-LCerEI',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Jan 05 2018 09:28:46 GMT+1030 (Cen. Australia Daylight Time)
+[debug] [2018-01-04T22:58:46.679Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-04T22:58:46.695Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/apollo-ed09e  
+  
+ Fri Jan 05 2018 09:28:46 GMT+1030 (Cen. Australia Daylight Time)
+[debug] [2018-01-04T22:58:48.992Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-04T22:58:48.992Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/apollo-ed09e/tokens  
+  
+ Fri Jan 05 2018 09:28:48 GMT+1030 (Cen. Australia Daylight Time)
+[debug] [2018-01-04T22:58:50.070Z] <<< HTTP RESPONSE 200

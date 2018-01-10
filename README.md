@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Clone the project
 - Install Dependencies
 - Create Firebase Project in your firebase console
-- Create 'firebase.ts' file in '/enviroments' and enter the following code:
+- Create 'firebase.ts' file in '/enviroments' and enter the following code: 
 '''
 export const firebase = {
     apiKey: "YOUR_API_KEY",
